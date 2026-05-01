@@ -1,0 +1,280 @@
+/* CONFIGURATION GÉNÉRALE */
+.iot-body {
+    background-color: #131315;
+    color: #e5e1e4;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+.font-headline { font-family: 'Space Grotesk', sans-serif; }
+.font-mono { font-family: 'IBM Plex Mono', monospace; }
+
+/* NAVIGATION */
+.iot-nav-blur {
+    background-color: rgba(19, 19, 21, 0.6);
+    backdrop-filter: blur(20px);
+}
+
+.nav-iot-link {
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: -0.025em;
+    color: #9ca3af;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.nav-iot-link:hover { color: #00f719; }
+
+.nav-iot-link.active {
+    color: #00f719;
+    font-family: 'Space Grotesk', sans-serif;
+    border-bottom: 2px solid #00f719;
+    padding-bottom: 0.25rem;
+}
+
+.back-home-btn {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: #00f719;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.back-home-btn:active { transform: scale(0.9); }
+
+/* HERO SECTION */
+.grid-pattern {
+    background-image: radial-gradient(circle, #3b4b36 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.1;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background-color: #353437;
+    border-radius: 9999px;
+    border: 1px solid rgba(206, 255, 190, 0.2);
+}
+
+.status-pulse {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #60a5fa;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 191, 255, 0.8);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .5; }
+}
+
+.status-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #00f719;
+}
+
+/* BUTTONS */
+.btn-iot-primary {
+    background-color: #00f719;
+    color: #003a01;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    box-shadow: 0 0 30px rgba(0, 247, 25, 0.4);
+    transition: all 0.3s;
+}
+
+.btn-iot-primary:hover {
+    box-shadow: 0 0 50px rgba(0, 247, 25, 0.6);
+}
+
+.btn-iot-outline {
+    border: 1px solid #3b4b36;
+    color: #e5e1e4;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-iot-outline:hover { background-color: #2a2a2c; }
+
+/* HERO VISUAL */
+.hero-glow-sphere {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 247, 25, 0.2);
+    filter: blur(80px);
+    border-radius: 50%;
+}
+
+.rotating-border {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    border-radius: 50%;
+    border: 2px dashed rgba(0, 247, 25, 0.3);
+    animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hero-img-container {
+    position: absolute;
+    inset: 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #00f719;
+    box-shadow: 0 0 20px 0 rgba(0, 247, 25, 0.3);
+}
+
+.wifi-badge {
+    position: absolute;
+    bottom: -1rem;
+    right: -1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(206, 255, 190, 0.2);
+}
+
+/* TERMINAL & CODE */
+.terminal-mockup {
+    background-color: #1e1e1e;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(59, 75, 54, 0.3);
+}
+
+.terminal-header {
+    background-color: #2d2d2d;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #3e3e3e;
+}
+
+.terminal-dot { width: 0.75rem; height: 0.75rem; border-radius: 50%; }
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+.terminal-title { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #9ca3af; }
+
+.terminal-body { padding: 1.5rem; overflow-x: auto; }
+
+.terminal-scroll::-webkit-scrollbar { width: 4px; }
+.terminal-scroll::-webkit-scrollbar-thumb { background: #00f719; border-radius: 2px; }
+
+.code-font { font-family: 'IBM Plex Mono', monospace; font-size: 0.875rem; line-height: 1.625; color: #d1d5db; }
+
+/* SYNTAX HIGHLIGHTING */
+.code-purple { color: #c586c0; }
+.code-orange { color: #ce9178; }
+.code-blue-light { color: #4ec9b0; }
+.code-blue { color: #569cd6; }
+.code-green-num { color: #b5cea8; }
+.code-yellow { color: #dcdcaa; }
+
+/* PIPELINE */
+.pipeline-connector {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(59, 75, 54, 0.2);
+    z-index: -1;
+}
+
+.step-card {
+    background-color: #1f1f21;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(59, 75, 54, 0.1);
+    position: relative;
+}
+
+.step-number {
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3rem;
+    height: 3rem;
+    background-color: #353437;
+    color: #e5e1e4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 0.125rem;
+}
+
+.step-number.active { background-color: #00f719; color: #003a01; }
+
+.step-content { text-align: center; margin-top: 1rem; }
+.step-icon { font-size: 2.5rem; color: #00f719; margin-bottom: 1rem; }
+.step-title { font-family: 'Space Grotesk', sans-serif; font-size: 0.875rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; color: #e5e1e4; }
+.step-desc { font-size: 0.75rem; color: #baccb0; margin-top: 0.5rem; }
+
+/* CAPABILITIES */
+.title-underline { width: 6rem; height: 4px; background-color: #00f719; margin-top: 1rem; }
+
+.capability-card {
+    padding: 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.5s;
+}
+
+.capability-card:hover { border-color: #00f719; }
+
+.capability-icon { font-size: 2.5rem; color: #00f719; margin-bottom: 1.5rem; transition: transform 0.3s; }
+.capability-card:hover .capability-icon { transform: scale(1.1); }
+
+/* FOOTER */
+.footer-iot-logo { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #00f719; letter-spacing: 0.1em; text-transform: uppercase; }
+
+.footer-iot-link {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #baccb0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-iot-link:hover { color: #00f719; }
+
+/* UTILS */
+.glass-panel {
+    background: rgba(53, 52, 55, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(59, 75, 54, 0.15);
+}
