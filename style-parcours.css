@@ -1,0 +1,261 @@
+/* VARIABLES & BASE */
+:root {
+    --primary-neon: #00F619;
+    --surface-dark: #131313;
+    --surface-card: #1b1c1c;
+    --text-dim: #baccb0;
+}
+
+body {
+    background-color: var(--surface-dark);
+    color: #e4e2e1;
+    min-height: 100vh;
+}
+
+/* HEADER */
+.header-main {
+    background-color: var(--surface-dark);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    height: 4rem;
+    border-bottom: 1px solid rgba(0, 246, 25, 0.1);
+}
+
+.logo-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--primary-neon);
+    font-size: 1.125rem;
+}
+
+.text-primary-neon { color: var(--primary-neon); }
+
+/* MAIN LAYOUT */
+.main-content {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+    max-width: 56rem; /* 4xl */
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* TITLES & LABELS */
+.badge-label {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--primary-neon);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size:clamp(3rem, 8vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+
+.hero-intro {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-dim);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* BIO SECTION */
+.grid-bio {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+@media (min-width: 768px) {
+    .grid-bio { grid-template-columns: repeat(12, 1fr); }
+    .bio-text-container { grid-column: span 8; }
+    .portrait-container { grid-column: span 4; }
+}
+
+.bio-details {
+    border-left: 1px solid rgba(0, 246, 25, 0.2);
+    padding-left: 1.5rem;
+    color: var(--text-dim);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.portrait-img {
+    width: 100%;
+    height: 20rem;
+    object-cover: cover;
+    filter: grayscale(1) contrast(1.25);
+    transition: all 0.7s ease;
+    border-radius: 0.75rem;
+}
+
+.portrait-container:hover .portrait-img {
+    filter: grayscale(0);
+}
+
+/* PROJECT CARDS */
+.grid-projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .grid-projects { grid-template-columns: repeat(2, 1fr); }
+}
+
+.project-card, .project-card-full {
+    background-color: var(--surface-card);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border-left: 2px solid rgba(0, 246, 25, 0.1);
+    transition: all 0.5s ease;
+}
+
+.project-card-full { grid-column: 1 / -1; }
+
+.guinea-glow:hover {
+    box-shadow: -4px 0 15px -5px rgba(206, 17, 38, 0.4),
+                0 0 15px -5px rgba(252, 209, 22, 0.4),
+                4px 0 15px -5px rgba(0, 148, 96, 0.4);
+}
+
+.project-icon { color: var(--primary-neon); font-size: 2.25rem; }
+
+.tag-iot {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px;
+    color: var(--primary-neon);
+    border: 1px solid rgba(0, 246, 25, 0.3);
+    padding: 0.25rem 0.5rem;
+}
+
+.project-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 700; margin: 1rem 0; }
+.project-desc { color: var(--text-dim); font-size: 0.875rem; line-height: 1.6; }
+
+/* SKILLS & PROGRESS */
+.grid-skills {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    margin-bottom: 8rem;
+}
+
+@media (min-width: 1024px) {
+    .grid-skills { grid-template-columns: 1fr 1fr; }
+}
+
+.skills-title { font-size: 1.875rem; font-weight: 700; text-transform: uppercase; color: var(--primary-neon); }
+.divider { height: 1px; flex-grow: 1; background-color: rgba(255,255,255,0.1); }
+
+.skill-item { margin-bottom: 2rem; }
+.skill-info { display: flex; justify-content: space-between; margin-bottom: 0.75rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; }
+
+.progress-track { height: 3px; background-color: #353535; border-radius: 999px; position: relative; }
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #c7c6c6, #c6c6c7);
+    border-radius: 999px;
+    position: relative;
+}
+
+.progress-glow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: #76ff64;
+    border-radius: 50%;
+    box-shadow: 0 0 8px white;
+}
+
+.skill-pill {
+    padding: 0.5rem 1rem;
+    background-color: #2a2a2a;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+}
+
+/* LANGUAGES */
+.grid-langs { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+.lang-card {
+    padding: 1.5rem;
+    background-color: var(--surface-card);
+    border-bottom: 2px solid transparent;
+    border-radius: 0.75rem;
+}
+
+.lang-card.border-primary { border-color: var(--primary-neon); }
+.lang-card.border-secondary { border-color: #c7c6c6; }
+.lang-card.border-accent { border-color: #76ff64; }
+
+.lang-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; }
+.lang-name { font-size: 1.25rem; font-weight: 700; color: var(--primary-neon); }
+
+/* BUTTON CV */
+.btn-cv {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--primary-neon);
+    color: #003a01;
+    padding: 1.25rem 2.5rem;
+    border-radius: 0.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.btn-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255,255,255,0.1);
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.btn-cv:hover .btn-overlay { transform: translateY(0); }
+
+/* FOOTER */
+.footer-main {
+    background-color: #1B1C1C;
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(0, 246, 25, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .footer-main { flex-direction: row; justify-content: space-between; }
+}
+
+.footer-logo { font-family: 'Space Grotesk', sans-serif; font-weight: 900; color: var(--primary-neon); font-size: 0.875rem; }
+.footer-links a { font-size: 0.75rem; color: var(--text-dim); text-decoration: none; margin: 0 1rem; transition: color 0.3s; }
+.footer-links a:hover { color: var(--primary-neon); }
+.footer-copy { font-size: 0.75rem; color: var(--text-dim); opacity: 0.8; }
