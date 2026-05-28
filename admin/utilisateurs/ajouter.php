@@ -1,6 +1,4 @@
 <?php
-// admin/utilisateurs/ajouter.php
-
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -95,17 +93,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="flex flex-col gap-2">
                     <label class="font-mono text-xs text-[#baccb0] uppercase">Prénom :</label>
-                    <input type="text" name="prenom" value="<?= e($prenom ?? '') ?>" required class="p-3" placeholder="John" />
+                    <input type="text" name="prenom" value="<?= e($prenom ?? '') ?>" required class="p-3" placeholder="Ex:Abdoulaye" />
                 </div>
                 <div class="flex flex-col gap-2">
                     <label class="font-mono text-xs text-[#baccb0] uppercase">Nom :</label>
-                    <input type="text" name="nom" value="<?= e($nom ?? '') ?>" required class="p-3" placeholder="Doe" />
+                    <input type="text" name="nom" value="<?= e($nom ?? '') ?>" required class="p-3" placeholder="Ex:Sow" />
                 </div>
             </div>
 
             <div class="flex flex-col gap-2">
                 <label class="font-mono text-xs text-[#baccb0] uppercase">Adresse E-mail (Identifiant) :</label>
-                <input type="email" name="email" value="<?= e($email ?? '') ?>" required class="p-3 w-full" placeholder="operator@domain.com" />
+                <input type="email" name="email" value="<?= e($email ?? '') ?>" required class="p-3 w-full" placeholder="Ex:abdoulaye@gmail.com" />
             </div>
 
             <div class="flex flex-col gap-2">
