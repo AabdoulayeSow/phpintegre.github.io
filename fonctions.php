@@ -64,13 +64,13 @@ function valider_email(string $email): bool {
 /*
 
   4. EXIGENCES SÉCURITÉ OBLIGATOIRES (SECTION 3.2)
-
+c'est la fonction Anti-XSS 
 */
 
 function e(?string $valeur): string {
     return htmlspecialchars($valeur ?? '', ENT_QUOTES, 'UTF-8');
 }
-
+//La création du jeton secret(attaque CSRF)
 function genererTokenCSRF(): string {
     if (empty($_SESSION['csrf_token'])) {
         $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
