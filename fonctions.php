@@ -1,9 +1,9 @@
 <?php
 
 /*
-  =========================================================================
+
   1. INITIALISATION DU SYSTÈME & DES SESSIONS (SÉCURITÉ)
-  =========================================================================
+
 */
 
 if (session_status() === PHP_SESSION_NONE) {
@@ -11,9 +11,9 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 /*
-  =========================================================================
+  
   2. FONCTIONS DE NAVIGATION & COMPOSANTS
-  =========================================================================
+
 */
 
 /**
@@ -43,9 +43,9 @@ function generer_lien_social(string $url, string $plateforme) {
 
 
 /*
-  =========================================================================
+ 
   3. FONCTIONS DE VALIDATION & NETTOYAGE
-  =========================================================================
+
 */
 
 function champ_requis($valeur): bool {
@@ -62,9 +62,9 @@ function valider_email(string $email): bool {
 
 
 /*
-  =========================================================================
+
   4. EXIGENCES SÉCURITÉ OBLIGATOIRES (SECTION 3.2)
-  =========================================================================
+
 */
 
 function e(?string $valeur): string {
@@ -87,9 +87,9 @@ function verifier_csrf(?string $token_soumis): bool {
 
 
 /*
-  =========================================================================
+
   5. SÉCURISATION DE L'ESPACE D'ADMINISTRATION
-  =========================================================================
+
 */
 
 /**
@@ -109,9 +109,9 @@ function verifierAuthentification(): void {
 }
 
 /*
-  =========================================================================
+ 
   6. JOURNALISATION DES VISITES
-  =========================================================================
+
 */
 
 function enregistrerVisite(PDO $pdo, string $nom_page) {
