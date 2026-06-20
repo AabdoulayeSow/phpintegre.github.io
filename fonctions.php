@@ -104,7 +104,7 @@ function verifierAuthentification(): void {
     if (!isset($_SESSION['admin_id'])) {
         // Redirection relative sécurisée vers la page de connexion
         header('Location: ../admin/connexion.php');
-        exit(); 
+        exit();   
     }
 }
 
