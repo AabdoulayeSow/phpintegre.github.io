@@ -21,10 +21,12 @@ try {
         $resultats = $requeteAll->fetchAll();
     }
 } catch (PDOException $e) {
-    echo "<div style='background:#ff0000; color:#fff; padding:20px; font-family:monospace; position:fixed; top:0; left:0; width:100%; z-index:9999;'>";
-    echo "<strong>Erreur SQL détectée :</strong> " . $e->getMessage();
-    echo "</div>";
-    $resultats = []; 
+    // 1. On écrit l'erreur réelle uniquement dans les logs du serveur
+    error_log("Erreur Recherche Projets: " . $e->getMessage());
+    
+    // 2. On masque l'erreur pour le visiteur et on vide les résultats proprement
+    $resultats = [];
+    $erreur_systeme = "SEARCH_FAILURE"; 
 }
 ?>
 <!DOCTYPE html>
